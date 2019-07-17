@@ -1,14 +1,12 @@
 package com.hibiup.examples
 
-import cats.effect.ExitCase.Error
-import cats.effect.{IO, LiftIO}
 import com.typesafe.scalalogging.Logger
 import jep.Jep
 
 import scala.util.{Failure, Success, Try}
 
 /**
-  * 与 Py4J 不同，Jep 使用 JNI 来嵌入 Python. 执行以下代码需要:
+  * 与 Py4J 不同，Jep 使用 JNI 来嵌入 Python. 需要以下条件:
   *
   * 1) 安装 Jep
   *       python -m pip install jep
