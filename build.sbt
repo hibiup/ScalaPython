@@ -25,12 +25,13 @@ lazy val dependencies = Seq(
 lazy val global = project
         .in(file("."))
         .aggregate(
-            PyScala
+            Scala,
+            Python
         )
 
-lazy val PyScala = project
+lazy val Scala = project
         .settings(
-            name := "PyScala",
+            name := "Scala",
             version := "0.1",
             scalaVersion := "2.13.0",
             libraryDependencies ++= dependencies,
@@ -41,10 +42,11 @@ lazy val PyScala = project
                 "-feature",
                 "-language:_"
             ),
-            scalaSource in Compile := baseDirectory.value / "main/scala"
-        )
+            scalaSource in Compile := baseDirectory.value / "main/scala",
+            ideaInternalPlugins := Seq("properties")
+        ).enablePlugins(SbtIdeaPlugin)
 
-lazy val PyServer = (project in file("PyServer"))
+lazy val Python = (project in file("Python"))
                 .settings(
                     scalaSource in Compile := baseDirectory.value / "main/python"
                 )
