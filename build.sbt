@@ -48,7 +48,7 @@ lazy val Scala = project
             scalaSource in Compile := baseDirectory.value / "main/scala",
             scalaSource in Test := baseDirectory.value / "test/scala",
             ideaInternalPlugins := Seq("properties"),
-            javaOptions += "-Djava.library.path=/path/to/python/jep"
+            // javaOptions += "-Djava.library.path=C:\\ProgramData\\Anaconda3\\Lib\\site-packages\\jep"
         )//.enablePlugins(SbtIdeaPlugin)
 
 lazy val Python = (project in file("Python"))

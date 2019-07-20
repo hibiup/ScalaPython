@@ -1,3 +1,2 @@
-class JepService:
-    def sayHello(self, name):
-        print("Hello, {0}".format(name))
+def say_hello(name):
+    print("Hello, {0}".format(name))
