@@ -65,7 +65,7 @@ object Example_Jep_CallToPython extends App{
       * 2) 设计命令组合，并传入 Python 指令
       * */
     def pythonGreeting(name:String): StateT[IO, Jep, String] = for {
-        // 从系统获得 Python 执行模块
+        // 执行 Python 已安装的模块
         _ <- eval("""import os""")
         current_path <- getValue[String](s"""os.getcwd()""")
         _ <- eval(s"""print("$current_path")""")
