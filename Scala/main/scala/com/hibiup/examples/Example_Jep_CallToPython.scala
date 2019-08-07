@@ -72,11 +72,11 @@ object Example_Jep_CallToPython extends App{
 
         // 从脚本获得 Python 执行模块
         // TODO：(不成功)
-        _ <- eval("""from Python.main.python import Example_Jep_CallToPython""")
-        v <- getValue[String](s"""Example_Jep_CallToPython.say_hello("$name")""")
+        //_ <- eval("""from Python.main.python import Example_Jep_CallToPython""")
+        //v <- getValue[String](s"""Example_Jep_CallToPython.say_hello("$name")""")
 
         _ <- close
-    } yield v
+    } yield current_path
 
 
     /**
